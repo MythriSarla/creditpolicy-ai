@@ -22,7 +22,7 @@ def init():
 
 
 def save(brief):
-    created = dt.datetime.now().isoformat(timespec="seconds")
+    created = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
     conclusions = brief.get("summary", "")
     with _conn() as c:
         cur = c.execute("INSERT INTO briefings(created_at, conclusions, brief) VALUES (?,?,?)",
