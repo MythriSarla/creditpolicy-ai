@@ -1,0 +1,8 @@
+[
+  {"name": "RBI Current Rates", "url": "https://www.rbi.org.in/", "category": "Rates"},
+  {"name": "RBI Press Releases", "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx", "category": "Policy"},
+  {"name": "RBI Monetary Policy", "url": "https://www.rbi.org.in/Scripts/MonetaryPolicy.aspx", "category": "Rates"},
+  {"name": "MoSPI Releases", "url": "https://mospi.gov.in/", "category": "Indicators"},
+  {"name": "SEBI Circulars", "url": "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=1&ssid=7&smid=0", "category": "Policy"},
+  {"name": "Economic Times BFSI", "url": "https://bfsi.economictimes.indiatimes.com/", "category": "Industry"}
+]

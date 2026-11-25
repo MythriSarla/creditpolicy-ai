@@ -1,0 +1,17 @@
+# Python
+venv/
+venv_old/
+.venv/
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# System files
+.DS_Store

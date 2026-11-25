@@ -1,0 +1,9 @@
+cat > requirements.txt << 'EOF'
+fastapi
+uvicorn
+requests
+pandas
+python-dotenv
+anthropic
+memento-memory[local-embeddings,gemini]
+EOF
