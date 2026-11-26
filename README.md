@@ -2,7 +2,7 @@
 
 A Gen AI app for credit teams in BFSI. It scrapes current public sources, asks an LLM to write a structured credit-market briefing, and compares it with the previous briefing so changes in policy, rates and regulation stand out.
 
-**Live demo:** <frontend URL, if deployed>
+**Live demo:** https://creditpolicy-ai-yyx.vercel.app/
 
 ## How it works
 
