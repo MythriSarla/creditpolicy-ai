@@ -10,7 +10,7 @@ A Gen AI app for credit teams in BFSI. It scrapes current public sources, asks a
 2. **Pandas** collects the scraped pages into one table that is passed to the LLM.
 3. **LLM (Gemini, with model fallbacks; Anthropic as an alternative)** returns a JSON briefing: summary, key indicators (repo rate, CRR, SLR and so on), changes against the previous briefing, risks and sources.
 4. **Memory:** every briefing is saved in SQLite (`briefings.db`) and compared with earlier ones. **Memento** adds a knowledge-graph memory layer on top, with entity extraction and recall.
-5. **React + Vite** frontend shows the latest briefing, history and sources.
+5. **React + Vite** frontend shows the latest briefing, a history list, and a table of what changed.
 
 ## Tech stack
 
@@ -25,13 +25,13 @@ cd backend
 python3.11 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env   # then fill in your keys
+cp .env.example .env   # then add your API keys
 python -m uvicorn main:app --reload
 ```
 
 The backend runs at http://127.0.0.1:8000.
 
-### Frontend
+### Frontend (second terminal)
 
 ```bash
 cd frontend
@@ -39,7 +39,7 @@ npm install
 npm run dev
 ```
 
-The frontend runs at http://localhost:5173. For a deployed backend, set `VITE_API_URL` to the backend URL before building.
+Open http://localhost:5173 and click **Generate briefing**. For a deployed backend, set `VITE_API_URL` to the backend URL before building.
 
 ## Environment variables
 
@@ -64,9 +64,9 @@ See `backend/.env.example`. Never commit your real `.env`.
 
 - Memento's relation-extraction step can be skipped when the Gemini API returns 503 (high demand). The briefing is still saved, and the comparison with previous briefings works through SQLite.
 - Memento requires a Python build with SQLite extension support. Use Python from python.org or Homebrew, not the system Python.
-- Some source pages (for example RBI Monetary Policy) return little text when scraped, so indicators are taken from the sources that do load.
-- <If deployed: Memento is set to off in production because its local database and embedding models are heavy for a free tier.>
+- Some source pages (for example RBI Monetary Policy) return little text when scraped, so indicators come from the sources that do load.
+- <If deployed: Memento is switched off in production because its local database and embedding models are heavy for a free tier.>
 
 ## Project context
 
-Built for <course name / code>, Gen AI App (Firecrawl, Memento).
+Built for <course name and code> as a Gen AI App (Firecrawl, Memento).
